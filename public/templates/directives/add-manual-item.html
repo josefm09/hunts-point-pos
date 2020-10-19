@@ -1,5 +1,5 @@
 <button class="btn btn-default btn-sm" data-toggle="modal" data-target="#myModal">
-	<i class="glyphicon glyphicon-plus"></i> Unlisted Item
+	<i class="glyphicon glyphicon-plus"></i> Producto nuevo
 </button>
 
 <!-- Modal -->
@@ -8,7 +8,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Add Item</h4>
+        <h4 class="modal-title" id="myModalLabel">Agregar producto</h4>
       </div>
       <div class="modal-body">
         
@@ -17,32 +17,21 @@
         	ng-submit="addManualItemForm.$valid && add(manualItem)">
 
     			<div class="form-group" ng-class="{ 'has-error': addManualItemForm.price.$error.required }">
-    				<label class="col-md-2 lead" for="price">Price</label>
+    				<label class="col-md-2 lead" for="price">Precio</label>
     				<div class="col-md-8 input-group">
     					<div class="input-group-addon">$</div>
     					<input type="number" step="any" min="0" class="form-control" name="price" ng-model="manualItem.price" required/>
     				</div>
     			</div>	
 
-    			<p class="text-danger" ng-show="addManualItemForm.price.$error.required">Enter price for item.</p>
-
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="food">Is it food?</label>  
-            <div class="col-md-4">
-              <input 
-                name="food" 
-                class="form-control"
-                type="checkbox"
-                ng-model="manualItem.food"> 
-            </div>
-          </div>
+    			<p class="text-danger" ng-show="addManualItemForm.price.$error.required">Entra el precio del producto.</p>
           
     		</form>
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" ng-click="addManualItemForm.$valid && add()">Save changes</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" ng-click="addManualItemForm.$valid && add()">Guardar cambios</button>
       </div>
     </div>
   </div>

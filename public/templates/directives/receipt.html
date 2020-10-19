@@ -7,9 +7,9 @@
     <table class="receipt table table-hover">
         <thead>
           <tr class="small">
-            <th> Quantity </th>
-            <th> Product </th>
-            <th> Price </th>
+            <th> Cantidad </th>
+            <th> Producto </th>
+            <th> Precio </th>
           </tr>
         </thead>
         <tbody>
@@ -25,17 +25,12 @@
                 {{ ( product.price * product.quantity ) | currency }} 
               </span>
               <br/> 
-              <small class="small-text"><em>({{ product.price | currency }} each)</em></small>
+              <small class="small-text"><em>({{ product.price | currency }} c/u)</em></small>
             </td>
           </tr>
         </tbody>
 
         <tbody>
-          <tr>
-            <td></td>
-            <td>Tax</td>
-            <td> {{ transaction.total_tax | currency }} </td>
-          </tr>
           <tr class="total">
             <td></td>
             <td>Total</td>
@@ -43,12 +38,12 @@
           </tr>
           <tr>
             <td></td>
-            <td>Payment</td>
+            <td>Pagado</td>
             <td> {{ transaction.payment | currency }} </td>
           </tr>
           <tr class="lead">
             <td></td>
-            <td>Change</td>
+            <td>Cambio</td>
             <td> {{ transaction.payment - transaction.total | currency }} </td>
           </tr>
         </tbody>

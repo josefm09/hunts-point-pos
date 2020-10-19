@@ -1,7 +1,7 @@
 <br/>
 
 <div class="text-center">
-	<span class="">Today's Sales</span> 
+	<span class="">Ventas de hoy</span> 
 	<br/>
 	<span class="text-success checkout-total-price">
 		$ <span odometer="todayTotal"></span>
@@ -13,11 +13,11 @@
 <table ng-if="transactions" class="table table-hover table-striped">
 	<thead>
 		<tr>
-			<th>Time</th>
+			<th>Hora</th>
 			<th>Total</th>
-			<th>Customer Payment</th>
-			<th>Products</th>
-			<th>Open</th>
+			<th>Pago del cliente</th>
+			<th>Productos</th>
+			<th>Abrir</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -33,7 +33,7 @@
 			</td>
 		</tr>
 		<tr ng-if="!transactions.length">
-			<td colspan="5">No transactions found.</td>
+			<td colspan="5">No se encontraron transacciones.</td>
 		</tr>
 	</tbody>	
 </table>
