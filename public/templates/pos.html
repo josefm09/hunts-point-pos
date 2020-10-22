@@ -57,9 +57,6 @@
 				{{  product.quantity * product.price | currency }} 
 			</td>
 			<td class="col-md-2">
-				{{ (product.quantity * product.price) + ( product.price * product.quantity) | currency }}
-			</td>
-			<td class="col-md-2">
 				<button class="btn btn-danger" ng-click="removeProductFromCart($index)">
 					<i class="glyphicon glyphicon-trash"></i>
 				</button>

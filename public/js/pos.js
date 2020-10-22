@@ -247,15 +247,7 @@ pos.controller('posController', function ($scope, $location, Inventory, Transact
   $scope.updateCartTotals = function () {
     $scope.cart.total = _.reduce($scope.cart.products, function (total, product) {
       var weightedPrice = parseFloat( product.price * product.quantity );
-      var weightedTax = parseFloat( weightedPrice * product.tax_percent );
-      var weightedPricePlusTax = weightedPrice + weightedTax;
-      return total + weightedPricePlusTax;
-    }, 0);
-
-    $scope.cart.total_tax = _.reduce($scope.cart.products, function (total, product) {
-      var weightedPrice = parseFloat( product.price * product.quantity );
-      var weightedTax = parseFloat( weightedPrice * product.tax_percent );
-      return total + weightedTax;
+      return total + weightedPrice;
     }, 0);
 
     updateCartInLocalStorage();
