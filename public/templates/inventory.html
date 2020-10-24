@@ -1,9 +1,18 @@
 
 <div class="container">
 	
-	<a href="#/inventory/create-product" class="btn btn-success pull-right">
-		<i class="glyphicon glyphicon-plus"></i> Agregar nuevo producto
-	</a>
+	<div class="row">
+		<div class="col-md-6">
+			<input type="text" class="form-control" placeholder="Introdusca texto para buscar" name="search" ng-model="search.$" placeholder="search">
+		</div>
+
+		<div class="col-md-6">
+			<a href="#/inventory/create-product" class="btn btn-success pull-right">
+				<i class="glyphicon glyphicon-plus"></i> Agregar nuevo producto
+			</a>
+		</div>
+	</div>
+	
 	<br/><br/>
 
 	<table class="table table-responsive table-striped table-hover">
@@ -16,7 +25,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr ng-repeat="product in inventory">
+			<tr ng-repeat="product in inventory | filter:search">
 				<td> 
 					<a href="" ng-click="editProduct(product._id)">
 						{{ product.name }} 
