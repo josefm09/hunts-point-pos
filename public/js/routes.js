@@ -14,6 +14,14 @@ pos.config(['$routeProvider',
           templateUrl: 'templates/inventory.html',
           controller: 'inventoryController',
         }).
+        when('/inventory2', {
+          templateUrl: 'templates/inventory2.html',
+          controller: 'inventoryController',
+        }).
+        when('/inventory3', {
+          templateUrl: 'templates/inventory3.html',
+          controller: 'inventoryController',
+        }).
         when('/inventory/create-product', {
           templateUrl: 'templates/inventory/create-product.html',
           controller: 'newProductController',
