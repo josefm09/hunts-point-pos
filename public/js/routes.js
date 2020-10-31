@@ -8,6 +8,7 @@ pos.config(['$routeProvider',
       $routeProvider.
         when('/', {
           templateUrl: 'templates/home.html',
+          controller: 'loginController',
         }).
         
         when('/inventory', {

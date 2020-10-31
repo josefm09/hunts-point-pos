@@ -135,7 +135,7 @@ pos.controller('posController', function ($scope, $location, Inventory, Transact
         if ($scope.isValidProduct($scope.barcode)) $scope.addProductToCart($scope.barcode);
         else 
           console.log('invalid barcode: ' + $scope.barcode);
-          // $scope.barcodeNotFoundError = true;
+          //$scope.barcodeNotFoundError = true;
 
         $scope.barcode = '';
         $scope.$digest();
@@ -235,7 +235,10 @@ pos.controller('posController', function ($scope, $location, Inventory, Transact
   };
 
   $scope.isValidProduct = function (barcode) {
-    return _.find($scope.inventory, { barcode: barcode.toString() });
+    if ($('#vivaldi').is(":checked")) return _.find($scope.inventory, { barcode: barcode.toString(), store: 'vivaldi' });
+    else if ($('#vivaldi2').is(":checked")) return _.find($scope.inventory, { barcode: barcode.toString(), store: 'vivaldi2' });
+    else if ($('#platini').is(":checked")) return _.find($scope.inventory, { barcode: barcode.toString(), store: 'platini' });
+    else return _.find($scope.inventory, { barcode: barcode.toString() });
   };
 
   var updateCartInLocalStorage = function () {
